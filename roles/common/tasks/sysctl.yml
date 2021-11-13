@@ -1,0 +1,11 @@
+---
+
+- name: "Set fs max file parameter to {{ file-max }}"
+  sysctl:
+    name: fs.file-max
+    value: "{{ file_max }}"
+    state: present
+    reload: yes
+
+- name: "Successful message"
+  shell: "echo \"Well done!\""
